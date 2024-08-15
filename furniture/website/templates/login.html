@@ -1,0 +1,27 @@
+{% load static %}
+
+<link href={% static "login.css" %} rel="stylesheet" type="text/css" media="all" />
+
+
+{% block start %}
+<div class="login-page">
+    <div class="form">
+      <form method="post" action="">
+        {% if messages %}
+      <ul class="messages">
+      {% for message in messages %}
+      <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+      {% endfor %} 
+      </ul>
+      {% endif %}
+       
+        {% csrf_token %}
+        <input type="text" name = "username" placeholder="username" required>
+        <input type="password" name="password" placeholder="password" required>
+        <button type= "submit" value= "Login" onclick="setTimeout(myfunction,5000);" > login</button>  
+        <p class="message">Not registered? <a href={%url "register"%}>Create an account</a></p>
+      </form>
+    </div>
+  </div>
+  {% endblock start %}
+
