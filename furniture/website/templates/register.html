@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>SignUp Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="{% static 'register.css' %}" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+
+</head>
+<body>
+
+{% block start %}
+	<div class="main-w3layouts wrapper">
+		<h1>SignUp Form</h1>
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+				<form action="" method="post">
+				{% csrf_token %}
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+    {% endfor %} 
+</ul>
+{% endif %}
+                    
+					<input class="text" type="text" name="username" placeholder="Username" required="">
+					<input class="text email" type="email" name="email" placeholder="Email" required pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$">
+					<input type="text" name="phone" placeholder="Phone no." title="Please enter 10 Digit number" pattern="[1-9]{1}[0-9]{9}">
+					<input class="text" type="password" name="password" placeholder="Password" required="" style="margin-top: 25px;">
+					<input class="text w3lpass" type="password" name="confirm_password" placeholder="Confirm Password" required="">
+					
+					<input type="submit" value="SIGNUP">
+				</form>
+				<p>Already an Account? <a href={% url 'login' %}> Login Now!</a></p>
+			</div>
+		</div>
+		
+		
+	</div>
+
+	{% endblock  %}
+</body>
+</html>
