@@ -1,0 +1,158 @@
+{% extends "header.html" %}
+{% load static %}
+{% block content %}
+<!doctype html>
+<html lang="en">
+	<body>
+			<div class="hero">
+				<div class="container">
+					<div class="row justify-content-between">
+						<div class="col-lg-5">
+							<div class="intro-excerpt">
+								<h1>About Us</h1>
+								<p class="mb-4">Welcome to ComfortCraft, your destination for high-quality furniture and home decor.We offer a curated selection of timeless pieces and contemporary designs to help you create spaces that inspire and delight. With a focus on excellence, integrity, and customer satisfaction, we provide superior craftsmanship, diverse selection, personalized service, and competitive prices. Visit our showroom or contact us today to discover the perfect pieces for your home!</p>
+							</div>
+						</div>
+						<div class="col-lg-7">
+							<div class="hero-img-wrap">
+								<img src="{% static "images/couch.png" %}" class="img-fluid" style="top: -137px;">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<div class="why-choose-section">
+			<div class="container">
+				<div class="row justify-content-between">
+					<div class="col-lg-6">
+						<h2 class="section-title">Why Choose Us</h2>
+						<p>we stand by the integrity and quality of our work. Each piece of furniture is meticulously crafted by skilled artisans who blend traditional techniques with modern technology.</p>
+						<div class="row my-5">
+							<div class="col-6 col-md-6">
+								<div class="feature">
+									<div class="icon">
+										<img src="{% static "images/truck.svg"  %}"alt="Image" class="imf-fluid">
+									</div>
+									<h3>Fast &amp; Free Shipping</h3>
+									<p>Our fast and free shipping service is part of our commitment to providing you with an exceptional customer experience. We aim to exceed your expectations every step of the way, from browsing to unboxing.</p>
+								</div>
+							</div>
+							<div class="col-6 col-md-6">
+								<div class="feature">
+									<div class="icon">
+										<img src="{% static "images/bag.svg" %}" alt="Image" class="imf-fluid">
+									</div>
+									<h3>Easy to Shop</h3>
+									<p>"Discover furniture made easy. Our intuitive website offers effortless navigation, clear categories, and detailed product information, ensuring a seamless shopping experience."</p>
+								</div>
+							</div>
+							<div class="col-6 col-md-6">
+								<div class="feature">
+									<div class="icon">
+										<img src= "{% static "images/support.svg" %}" alt="Image" class="imf-fluid">
+									</div>
+									<h3>24/7 Support</h3>
+									<p>"Explore furniture made easy with our 24/7 support. Our intuitive website ensures effortless navigation, clear categories, and detailed product information, providing a seamless shopping experience."</p>
+								</div>
+							</div>
+							<div class="col-6 col-md-6">
+								<div class="feature">
+									<div class="icon">
+										<img src="{% static "images/return.svg" %}"  alt="Image" class="imf-fluid">
+									</div>
+									<h3>Hassle Free Returns</h3>
+									<p>"Say goodbye to the hassle of transporting bulky items. Our direct-to-door delivery makes it convenient for you to receive your furniture without lifting a finger. Enjoy hassle-free returns with us."</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-5">
+						<div class="img-wrap">
+							<img src="{% static "images/sofa.jpg" %}" alt="Image" class="img-fluid">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="testimonial-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-7 mx-auto text-center">
+						<h2 class="section-title">Testimonials</h2>
+					</div>
+				</div>
+				<div class="row justify-content-center">
+					<div class="col-lg-12">
+						<div class="testimonial-slider-wrap text-center">
+							<div id="testimonial-nav">
+								<span class="prev" data-controls="prev"><span class="fa fa-chevron-left"></span></span>
+								<span class="next" data-controls="next"><span class="fa fa-chevron-right"></span></span>
+							</div>
+							<div class="testimonial-slider">
+								<div class="item">
+									<div class="row justify-content-center">
+										<div class="col-lg-8 mx-auto">
+
+											<div class="testimonial-block text-center">
+												<blockquote class="mb-5">
+													<p>&ldquo;I appreciated the ability to customize certain aspects of the furniture to suit my preferences.I would definitely recommend this furniture to friends and family.I would definitely recommend this furniture to friends and family.&rdquo;</p>
+												</blockquote>
+
+												<div class="author-info">
+													<div class="author-pic">
+														<img src="https://img.freepik.com/premium-vector/businessman-avatar-illustration-cartoon-user-portrait-user-profile-icon_118339-5507.jpg?size=626&ext=jpg&ga=GA1.1.2100554019.1707282497&semt=ais" alt="Maria Jones" class="img-fluid">
+													</div>
+													<h3 class="font-weight-bold">Jay Desai</h3>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div> 
+								<div class="item">
+									<div class="row justify-content-center">
+										<div class="col-lg-8 mx-auto">
+
+											<div class="testimonial-block text-center">
+												<blockquote class="mb-5">
+													<p>&ldquo;I'm extremely satisfied with my purchase and would buy from this company again.The furniture pieces are versatile and can be used in various rooms.&rdquo;</p>
+												</blockquote>
+
+												<div class="author-info">
+													<div class="author-pic">
+														<img src="https://img.freepik.com/free-photo/portrait-young-man-glasses-suit-3d-rendering_1142-43524.jpg?t=st=1713354146~exp=1713357746~hmac=202699846e4f698023fc2ea352415bec2295ceaa2bcb65fdab2755c5cf0a789f&w=740" alt="Maria Jones" class="img-fluid">
+													</div>
+													<h3 class="font-weight-bold">Nikunj Bavaliya</h3>
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div> 
+								<div class="item">
+									<div class="row justify-content-center">
+										<div class="col-lg-8 mx-auto">
+
+											<div class="testimonial-block text-center">
+												<blockquote class="mb-5">
+													<p>&ldquo;The delivery was prompt and the furniture arrived in perfect condition.It's great to know that the furniture is sustainably sourced and eco-friendly.&rdquo;</p>
+												</blockquote>
+
+												<div class="author-info">
+													<div class="author-pic">
+														<img src="https://img.freepik.com/free-photo/portrait-beautiful-woman-glasses-3d-rendering_1142-40736.jpg?t=st=1713354253~exp=1713357853~hmac=c80004de33bfe6a40b4ce28d17c7d8c17ac98bee9078c947c1b929867f00a2b0&w=740" alt="Maria Jones" class="img-fluid">
+													</div>
+													<h3 class="font-weight-bold">Shivani Patel</h3>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div> 
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	{% endblock content %}
+</html>
