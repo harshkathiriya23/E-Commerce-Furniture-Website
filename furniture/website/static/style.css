@@ -13,9 +13,9 @@ body {
   font-family: "Inter", sans-serif;
   font-weight: 400;
   line-height: 28px;
-  color: #6a6a6a;
+  color: #f8fafc;
   font-size: 14px;
-  background-color: #eff2f1; }
+  background-color: #020617; }
 
 a {
   text-decoration: none;
@@ -31,7 +31,7 @@ a {
     font-weight: 600; }
 
 .custom-navbar {
-  background: #3b5d50 !important;
+  background: #0f172a !important;
   padding-top: 20px;
   padding-bottom: 20px; 
   position: sticky;
@@ -69,7 +69,7 @@ a {
         bottom: 0;
         left: 8px;
         right: 8px;
-        background: #f9bf29;
+        background: #f59e0b;
         height: 5px;
         opacity: 1;
         visibility: visible;
@@ -101,7 +101,7 @@ a {
         margin-right: 20px; }
 
 .hero {
-  background: #3b5d50;
+  background: #0f172a;
   padding: calc(4rem - 30px) 0 0rem 0; }
   @media (min-width: 768px) {
     .hero {
@@ -179,11 +179,13 @@ a {
     -webkit-box-shadow: none;
     box-shadow: none; }
   .btn.btn-primary {
-    background: #3b5d50;
-    border-color: #3b5d50; }
+    background: #f59e0b;
+    border-color: #f59e0b;
+    color: #000; }
     .btn.btn-primary:hover {
-      background: #314d43;
-      border-color: #314d43; }
+      background: #d97706;
+      border-color: #d97706;
+      color: #000; }
   .btn.btn-secondary {
     color: #2f2f2f;
     background: #f9bf29;
@@ -200,7 +202,7 @@ a {
       color: #ffffff; }
 
 .section-title {
-  color: #2f2f2f; }
+  color: #f8fafc; }
 
 .product-section {
   padding: 7rem 0; }
@@ -224,7 +226,7 @@ a {
       font-weight: 800 !important;
       font-size: 18px !important; }
     .product-section .product-item h3, .product-section .product-item strong {
-      color: #2f2f2f;
+      color: #f8fafc;
       text-decoration: none; }
     .product-section .product-item .icon-cross {
       position: absolute;
@@ -257,7 +259,7 @@ a {
       right: 0;
       position: absolute;
       content: "";
-      background: #dce5e4;
+      background: #1e293b;
       height: 0%;
       z-index: -1;
       border-radius: 10px;
@@ -309,7 +311,7 @@ a {
       bottom: 0; }
   .feature h3 {
     font-size: 14px;
-    color: #2f2f2f; }
+    color: #f8fafc; }
   .feature p {
     font-size: 14px;
     line-height: 22px;
@@ -411,7 +413,7 @@ a {
       content: "";
       position: absolute;
       border-radius: 20px;
-      background: #dce5e4;
+      background: #1e293b;
       width: 98px;
       height: 98px;
       top: 50%;
@@ -540,12 +542,12 @@ a {
 
 .footer-section {
   padding: 0px 0;
-  background: #ffffff; }
+  background: #0f172a; }
   .footer-section .relative {
     position: relative; }
   .footer-section a {
     text-decoration: none;
-    color: #2f2f2f;
+    color: #94a3b8;
     -webkit-transition: .3s all ease;
     -o-transition: .3s all ease;
     transition: .3s all ease; }
@@ -563,7 +565,7 @@ a {
     .footer-section .subscription-form h3 {
       font-size: 18px;
       font-weight: 500;
-      color: #3b5d50; }
+      color: #f59e0b; }
     .footer-section .subscription-form .form-control {
       height: 50px;
       border-radius: 10px;
@@ -603,7 +605,7 @@ a {
     font-size: 32px;
     font-weight: 500;
     text-decoration: none;
-    color: #3b5d50; }
+    color: #f59e0b; }
   .footer-section .custom-social li {
     margin: 2px;
     display: inline-block; }
@@ -613,7 +615,7 @@ a {
       text-align: center;
       line-height: 40px;
       display: inline-block;
-      background: #dce5e4;
+      background: #1e293b;
       color: #3b5d50;
       border-radius: 50%; }
       .footer-section .custom-social li a:hover {
@@ -628,7 +630,9 @@ a {
   padding: 7rem 0; }
 
 .form-control {
-  height: 50px;
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: #f8fafc;
   border-radius: 10px;
   font-family: "Inter", sans-serif; }
   .form-control:active, .form-control:focus {
@@ -675,13 +679,13 @@ textarea {
     text-align: center;
     border-width: 0px !important;
     vertical-align: middle;
-    color: rgba(0, 0, 0, 0.8);
+    color: #f8fafc;
     font-size: 18px; }
   .site-blocks-table td {
     padding: 20px;
     text-align: center;
     vertical-align: middle;
-    color: rgba(0, 0, 0, 0.8); }
+    color: #94a3b8; }
   .site-blocks-table tbody tr:first-child td {
     border-top: 1px solid #3b5d50 !important; }
   .site-blocks-table .btn {
