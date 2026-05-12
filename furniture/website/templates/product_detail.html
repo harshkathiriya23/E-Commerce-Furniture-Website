@@ -1,0 +1,100 @@
+{% extends "header.html" %}
+{% load static %}
+
+{% block content %}
+<div class="hero">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-lg-5">
+                <div class="intro-excerpt">
+                    <h1>{{ product.name }}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="untree_co-section product-section before-footer-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-5 mb-md-0">
+                <img src="{{ product.image.url }}" class="img-fluid rounded shadow-sm">
+            </div>
+            <div class="col-md-6">
+                <h2 class="h3 mb-3 text-black">{{ product.name }}</h2>
+                <div class="p-3 border rounded mb-4 bg-light">
+                    <p class="h4 text-primary mb-0 font-weight-bold">${{ product.price }}</p>
+                </div>
+                <div class="mb-5">
+                    <p class="text-secondary">{{ product.description }}</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <a href="{% url 'buy_now' product.id %}" class="btn btn-primary btn-lg btn-block">Buy Now</a>
+                    </div>
+                    <div class="col-md-5">
+                        <a href="{% url 'add_to_cart' product.id %}" class="btn btn-outline-black btn-lg btn-block">Add to Cart</a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="{% url 'add_to_wishlist' product.id %}" class="btn btn-outline-danger btn-lg btn-block" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <a href="{% url 'product_list' %}" class="text-decoration-none"><i class="fa fa-arrow-left me-2"></i>Back to Shop</a>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <hr>
+                <h3 class="h4 mb-4 text-black">Customer Reviews</h3>
+                
+                {% if reviews %}
+                    {% for review in reviews %}
+                    <div class="mb-4 pb-3 border-bottom">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <strong>{{ review.user.username }}</strong>
+                            <small class="text-muted">{{ review.created_at|date:"M d, Y" }}</small>
+                        </div>
+                        <div class="mb-2">
+                            {% for i in "12345" %}
+                                <i class="fa fa-star {% if i|add:0 <= review.rating %}text-warning{% else %}text-secondary{% endif %}"></i>
+                            {% endfor %}
+                        </div>
+                        <p class="mb-0 text-secondary">{{ review.comment }}</p>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <p class="text-muted italic">No reviews yet. Be the first to review this product!</p>
+                {% endif %}
+
+                <div class="mt-5 p-4 bg-light rounded">
+                    <h4 class="h5 mb-3 text-black">Write a Review</h4>
+                    {% if user.is_authenticated %}
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label class="form-label">Rating</label>
+                                <select name="rating" class="form-select" required>
+                                    <option value="5">5 Stars - Excellent</option>
+                                    <option value="4">4 Stars - Very Good</option>
+                                    <option value="3">3 Stars - Good</option>
+                                    <option value="2">2 Stars - Fair</option>
+                                    <option value="1">1 Star - Poor</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Your Comment</label>
+                                <textarea name="comment" class="form-control" rows="4" required placeholder="Share your thoughts about this product..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-black">Submit Review</button>
+                        </form>
+                    {% else %}
+                        <p>Please <a href="{% url 'login' %}">login</a> to leave a review.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

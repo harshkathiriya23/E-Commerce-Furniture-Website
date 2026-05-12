@@ -30,24 +30,31 @@
 
 				<div class="collapse navbar-collapse" id="navbarsFurni">
 					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-						<div class="collapse navbar-collapse" id="tn-navbar-collapse">
-						<li class="nav-item" ><a class="nav-link" href= {% url "index" %}>Home</a></li>
-						<li><a class="nav-link" href={% url "product_list" %} >Shop</a></li>
-						<li><a class="nav-link" href= {% url "about" %}>About us</a></li>
-						<li><a class="nav-link" href={% url "contact" %}>Contact us</a></li>
-						{% if request.session.username %} 
-           					<li><a class="nav-link" href="{% url 'view_cart' %}">myorder</a></li> 
-           					<li><a class="nav-link" href="{% url 'logout' %}">logout({{request.session.username}})</a></li> 
-
+						<li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+						<li><a class="nav-link" href="{% url 'product_list' %}">Shop</a></li>
+						<li><a class="nav-link" href="{% url 'about' %}">About us</a></li>
+						<li><a class="nav-link" href="{% url 'contact' %}">Contact us</a></li>
+						{% if request.user.is_authenticated %} 
+							<li><a class="nav-link" href="{% url 'order_history' %}">My Orders</a></li> 
+							<li><a class="nav-link" href="{% url 'logout' %}">Logout ({{ request.user.username }})</a></li> 
 						{% else %} 
-							<li><a class="nav-link" href="{% url 'register' %}">signup</a> </li>
-           					<li><a class="nav-link" href="{% url 'login' %}">login</a> </li>
-        				{% endif %} 
-						
+							<li><a class="nav-link" href="{% url 'register' %}">Signup</a></li>
+							<li><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+						{% endif %} 
 					</ul>
 
-					
+					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+						<li>
+							<form action="{% url 'product_list' %}" method="GET" class="d-flex me-3">
+								<input type="text" name="q" class="form-control form-control-sm" placeholder="Search products..." value="{{ query|default:'' }}">
+								<button type="submit" class="btn btn-sm btn-outline-light ms-1"><i class="fa fa-search"></i></button>
+							</form>
+						</li>
+						<li><a class="nav-link" href="{% url 'view_wishlist' %}"><i class="fa fa-heart text-white" style="font-size: 20px;"></i></a></li>
+						<li><a class="nav-link" href="{% url 'view_cart' %}"><img src="{% static 'images/cart.svg' %}"></a></li>
+					</ul>
 				</div>
+
 			</div>
 		</nav>
 		{% block content %}
